@@ -30,3 +30,26 @@ BEGIN
     SELECT @Contagem AS 'Contagem de Livros';
 END;
 
+CREATE PROCEDURE sp_VerificarLivrosCategoria
+    @NomeCategoria NVARCHAR(100)
+AS
+BEGIN
+    DECLARE @CategoriaID INT;
+    DECLARE @CategoriaTemLivros BIT;
+ SELECT @CategoriaID = CategoriaID
+    FROM Categorias
+    WHERE Nome = @NomeCategoria;
+IF @CategoriaID IS NOT NULL
+    BEGIN
+SELECT @CategoriaTemLivros = CASE WHEN EXISTS (
+            SELECT 1
+            FROM Livros
+            WHERE CategoriaID = @CategoriaID
+        ) THEN 1 ELSE 0 END;
+    END
+    ELSE
+     BEGIN
+         SET @CategoriaTemLivros = 0;
+    END
+ SELECT @CategoriaTemLivros AS 'CategoriaTemLivros';
+END;
