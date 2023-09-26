@@ -26,7 +26,7 @@ BEGIN
     INNER JOIN Categorias ON Livros.CategoriaID = Categorias.CategoriaID
     WHERE Categorias.Nome = @NomeCategoria;
 
-    -- Retorna o resultado da contagem
+  
     SELECT @Contagem AS 'Contagem de Livros';
 END;
 
