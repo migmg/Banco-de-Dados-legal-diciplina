@@ -53,3 +53,13 @@ SELECT @CategoriaTemLivros = CASE WHEN EXISTS (
     END
  SELECT @CategoriaTemLivros AS 'CategoriaTemLivros';
 END;
+
+
+CREATE PROCEDURE sp_LivrosAteAno
+    @AnoEspecifico INT
+AS
+BEGIN
+    SELECT Titulo, AnoPublicacao
+    FROM Livros
+    WHERE AnoPublicacao <= @AnoEspecifico;
+END;
