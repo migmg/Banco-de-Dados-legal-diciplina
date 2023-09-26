@@ -63,3 +63,13 @@ BEGIN
     FROM Livros
     WHERE AnoPublicacao <= @AnoEspecifico;
 END;
+
+CREATE PROCEDURE sp_TitulosPorCategoria
+    @NomeCategoria NVARCHAR(100)
+AS
+BEGIN
+    SELECT Livros.Titulo
+    FROM Livros
+    INNER JOIN Categorias ON Livros.CategoriaID = Categorias.CategoriaID
+    WHERE Categorias.Nome = @NomeCategoria;
+END;
