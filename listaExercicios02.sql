@@ -73,3 +73,29 @@ BEGIN
     INNER JOIN Categorias ON Livros.CategoriaID = Categorias.CategoriaID
     WHERE Categorias.Nome = @NomeCategoria;
 END;
+
+
+CREATE PROCEDURE sp_AdicionarLivro
+    @Titulo NVARCHAR(100),
+    @AnoPublicacao INT,
+    @CategoriaID INT
+AS
+BEGIN
+    BEGIN TRY
+     
+        IF EXISTS (SELECT 1 FROM Livro WHERE Titulo = @Titulo)
+        BEGIN
+            THROW 51000, 'Livro com título já existe.', 1;
+        END
+
+       
+        INSERT INTO Livro (Titulo, AnoPublicacao, CategoriaID)
+        VALUES (@Titulo, @AnoPublicacao, @CategoriaID);
+
+        PRINT 'Livro adicionado com sucesso.';
+    END TRY
+    BEGIN CATCH
+     
+        PRINT 'Erro: ' + ERROR_MESSAGE();
+    END CATCH
+END;
