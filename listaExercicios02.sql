@@ -14,3 +14,19 @@ BEGIN
     INNER JOIN Categorias ON Livros.CategoriaID = Categorias.CategoriaID
     WHERE Categorias.Nome = @NomeCategoria;
 END;
+
+CREATE PROCEDURE sp_ContarLivrosPorCategoria
+    @NomeCategoria NVARCHAR(100)
+AS
+BEGIN
+    DECLARE @Contagem INT;
+
+    SELECT @Contagem = COUNT(Livros.LivroID)
+    FROM Livros
+    INNER JOIN Categorias ON Livros.CategoriaID = Categorias.CategoriaID
+    WHERE Categorias.Nome = @NomeCategoria;
+
+    -- Retorna o resultado da contagem
+    SELECT @Contagem AS 'Contagem de Livros';
+END;
+
