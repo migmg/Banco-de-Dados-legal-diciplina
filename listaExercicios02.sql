@@ -99,3 +99,19 @@ BEGIN
         PRINT 'Erro: ' + ERROR_MESSAGE();
     END CATCH
 END;
+
+CREATE PROCEDURE sp_TitulosPorCategoria: Esta linha define o início da criação da stored procedure chamada sp_TitulosPorCategoria. Ela é responsável por listar os títulos dos livros de uma categoria específica.
+
+@NomeCategoria NVARCHAR(100): Isso define um parâmetro chamado @NomeCategoria, que é uma string de até 100 caracteres. Este parâmetro será usado para especificar o nome da categoria da qual queremos listar os títulos dos livros.
+
+BEGIN: O bloco BEGIN marca o início do corpo da stored procedure. A partir deste ponto, começamos a definir a lógica da procedure.
+
+SELECT Livros.Titulo: Esta é a consulta SQL que seleciona os títulos dos livros.
+
+FROM Livros: Indica a tabela da qual estamos selecionando os títulos, que é a tabela Livros.
+
+INNER JOIN Categorias ON Livros.CategoriaID = Categorias.CategoriaID: Este é um INNER JOIN que relaciona a tabela Livros com a tabela Categorias com base na coluna CategoriaID. Isso nos permite encontrar os livros que correspondem à categoria especificada.
+
+WHERE Categorias.Nome = @NomeCategoria;: Esta parte da consulta filtra os resultados para encontrar os livros onde o nome da categoria corresponde ao valor do parâmetro @NomeCategoria.
+
+END;: Isso marca o fim da da stored procedure.
