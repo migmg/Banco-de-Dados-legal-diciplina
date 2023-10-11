@@ -50,6 +50,25 @@ INSERT INTO eventos (data_evento) VALUES
 
 3 c) SELECT DATEDIFF('2023-12-25', '2023-09-14') AS dias_entre_datas;
 
+3 d) SELECT data_evento, DAYNAME(data_evento) AS nome_dia_semana FROM eventos;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
