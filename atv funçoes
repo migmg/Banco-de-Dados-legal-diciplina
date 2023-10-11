@@ -77,6 +77,8 @@ END;
 
 6 b) SELECT produto, MAX(preco) AS produto_mais_caro FROM produtos;
 
+6 c) SELECT produto, MIN(preco) AS produto_mais_barato FROM produtos;
+
 
 
 
