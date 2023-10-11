@@ -11,3 +11,10 @@ INSERT INTO nomes (nome) VALUES
 b) SELECT UPPER(nome) FROM nomes;
 
 c) SELECT nome, LENGTH(nome) AS tamanho FROM nomes;
+
+d) SELECT
+    CASE
+        WHEN RIGHT(nome, 1) = 'a' THEN 'Sra. ' + nome
+        ELSE 'Sr. ' + nome
+    END AS nome_com_tratamento
+FROM nomes;
