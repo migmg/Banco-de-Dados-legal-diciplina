@@ -1,1 +1,9 @@
+a) CREATE TABLE nomes (
+    nome VARCHAR(60)
+);
 
+INSERT INTO nomes (nome) VALUES
+('Roberta'),
+('Roberto'),
+('Maria Clara'),
+('João');
