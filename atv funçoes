@@ -35,7 +35,7 @@ INSERT INTO produtos (produto, preco, quantidade) VALUES
 
 2 c) SELECT produto, ABS(quantidade) AS quantidade_absoluta FROM produtos;
 
-
+2 d)SELECT AVG(preco) AS media_precos FROM produtos;
 
 
 
