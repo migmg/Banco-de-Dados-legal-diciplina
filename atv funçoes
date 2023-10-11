@@ -37,6 +37,14 @@ INSERT INTO produtos (produto, preco, quantidade) VALUES
 
 2 d)SELECT AVG(preco) AS media_precos FROM produtos;
 
+3 a) CREATE TABLE eventos (
+    data_evento DATE
+);
+
+INSERT INTO eventos (data_evento) VALUES
+('2023-10-11'),
+('2023-10-15'),
+('2023-10-20');
 
 
 
