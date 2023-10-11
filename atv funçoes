@@ -71,7 +71,7 @@ BEGIN
     RETURN preco * quantidade;
 END;
 
-
+5 b) SELECT produto, quantidade, TOTAL_VALOR(preco, quantidade) AS valor_total FROM produtos;
 
 
 
