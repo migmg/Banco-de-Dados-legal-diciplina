@@ -64,8 +64,12 @@ FROM produtos;
     END AS categoria_preco
 FROM produtos;
 
-
-
+5 a) 
+CREATE FUNCTION TOTAL_VALOR(preco DECIMAL(10, 2), quantidade INT)
+RETURNS DECIMAL(10, 2)
+BEGIN
+    RETURN preco * quantidade;
+END;
 
 
 
