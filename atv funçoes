@@ -32,3 +32,17 @@ INSERT INTO produtos (produto, preco, quantidade) VALUES
 ('Produto D', 25.99, 8);
 
 2 b) SELECT produto, ROUND(preco, 2) AS preco_arredondado FROM produtos;
+
+2 c) SELECT produto, ABS(quantidade) AS quantidade_absoluta FROM produtos;
+
+
+
+
+
+
+
+
+
+
+
+
