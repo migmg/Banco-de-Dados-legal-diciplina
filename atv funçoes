@@ -75,7 +75,7 @@ END;
 
 6 a) SELECT COUNT(*) AS numero_total_de_produtos FROM produtos;
 
-
+6 b) SELECT produto, MAX(preco) AS produto_mais_caro FROM produtos;
 
 
 
