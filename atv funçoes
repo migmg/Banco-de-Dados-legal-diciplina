@@ -96,6 +96,11 @@ BEGIN
     RETURN resultado;
 END;
 
+7 b)CREATE FUNCTION F_EXPONENCIAL(base DECIMAL(10, 2), expoente INT)
+RETURNS DECIMAL(10, 2)
+BEGIN
+    RETURN POW(base, expoente);
+END;
 
 
 
