@@ -9,3 +9,5 @@ INSERT INTO nomes (nome) VALUES
 ('João');
 
 b) SELECT UPPER(nome) FROM nomes;
+
+c) SELECT nome, LENGTH(nome) AS tamanho FROM nomes;
