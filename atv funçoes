@@ -102,6 +102,19 @@ BEGIN
     RETURN POW(base, expoente);
 END;
 
+7 c) CREATE FUNCTION PALINDROMO(palavra VARCHAR(50))
+RETURNS INT
+BEGIN
+    DECLARE reverso VARCHAR(50);
+    
+    SET reverso = REVERSE(palavra);
+    
+    IF palavra = reverso THEN
+        RETURN 1;
+    ELSE
+        RETURN 0;
+    END IF;
+END;
 
 
 
