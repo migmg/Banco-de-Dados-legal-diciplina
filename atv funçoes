@@ -79,7 +79,7 @@ END;
 
 6 c) SELECT produto, MIN(preco) AS produto_mais_barato FROM produtos;
 
-
+6 d) SELECT SUM(IF(quantidade > 0, preco * quantidade, 0)) AS soma_total_em_estoque FROM produtos;
 
 
 
